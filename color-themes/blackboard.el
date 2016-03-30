@@ -92,6 +92,11 @@
      (ediff-odd-diff-A ((t (:background "#484848" :foreground "Grey"))))
      (ediff-odd-diff-B ((t (:background "#484848" :foreground "Grey"))))
      (ediff-odd-diff-C ((t (:background "#484848" :foreground "Grey"))))
-     (ediff-odd-diff-Ancestor ((t (:background "#484848" :foreground "Grey")))))))
+     (ediff-odd-diff-Ancestor ((t (:background "#484848" :foreground "Grey"))))
+
+     (cider-debug-code-overlay-face ((t (:background "#color-52"))))
+     (cider-result-overlay-face ((t (:background "color-58"))))
+
+     )))
 
 (provide 'blackboard)
