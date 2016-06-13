@@ -7,7 +7,7 @@
              (user/inject-repl-utils))}}
  
  :repl
- {:plugins      [[cider/cider-nrepl "0.13-SNAPSHOT"]
+ {:plugins      [[cider/cider-nrepl "0.13.0-SNAPSHOT"]
                  [refactor-nrepl "2.3.0-SNAPSHOT"]]
   :dependencies [[org.clojars.gjahad/debug-repl "0.3.3"]
                  [org.clojure/tools.namespace "0.2.11"]
