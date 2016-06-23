@@ -58,7 +58,7 @@
 (vendor 'projectile)
 (vendor 'ag)
 (vendor 'wgrep-ag)
-(vendor 'color-theme)
+;; (vendor 'color-theme)
 (vendor 'magit-gh-pulls)
 (vendor 'magit)
 (vendor 'yasnippet)
