@@ -103,7 +103,7 @@
 (load "rally/faces")
 (load "rally/dired")
 (load "rally/window")
-(load "rally/server")
+;;(load "rally/server")
 (load "rally/recentf")
 (load "rally/oracle")
 (load "rally/refactor")
