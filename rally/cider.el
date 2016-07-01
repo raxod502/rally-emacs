@@ -20,9 +20,9 @@
              (not (string/ends-with (buffer-name) "project.clj")))
     (cider-load-buffer)))
 
-(defadvice save-buffer (after cider-reload-saved-file activate)
-  (ignore-errors
-    (cider-auto-reload)))
+;; (defadvice save-buffer (after cider-reload-saved-file activate)
+;;   (ignore-errors
+;;     (cider-auto-reload)))
 
 (add-hook 'cider-repl-mode-hook
           '(lambda ()
