@@ -54,7 +54,7 @@
 (eval-after-load 'paredit
   '(progn
      ;;(define-key paredit-mode-map (kbd "s-d")       'paredit-duplicate-closest-sexp)
-     (define-key paredit-mode-map (kbd "C-<up>")    'paredit-splice-sexp-killing-backward)
+     ;;(define-key paredit-mode-map (kbd "C-<up>")    'paredit-splice-sexp-killing-backward)
      (define-key paredit-mode-map (kbd "M-)")       'paredit-wrap-round-from-behind)
      (define-key paredit-mode-map (kbd "M-<left>")  'paredit-backward-slurp-sexp)
      (define-key paredit-mode-map (kbd "M-<right>") 'paredit-backward-barf-sexp)
