@@ -30,7 +30,7 @@
   ;; Idle highlight mode - can't live without it.
   (idle-highlight-mode t)
 
-  (set (make-local-variable 'comment-auto-fill-only-comments) t)
+  ;; (set (make-local-variable 'comment-auto-fill-only-comments) t)
   (auto-fill-mode t))
 
 (add-hook 'prog-mode-hook 'my-prog-mode-hook)
