@@ -10,7 +10,7 @@
 (define-key cider-mode-map (kbd "C-c C-o") 'cider-repl-clear-buffer)
 (define-key cider-repl-mode-map (kbd "C-c C-o") 'cider-repl-clear-buffer)
 
-(add-hook 'cider-mode-hook #'eldoc-mode)
+;;(add-hook 'cider-mode-hook #'eldoc-mode)
 
 (defvar cider-reload-on-save t)
 
