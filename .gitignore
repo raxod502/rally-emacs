@@ -10,7 +10,6 @@ url/
 eshell
 projectile.cache
 tramp
-user.init.el
 custom.el
 nrepl-history
 places
