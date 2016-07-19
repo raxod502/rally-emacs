@@ -103,6 +103,7 @@
 (global-aggressive-indent-mode 1)
 (global-auto-composition-mode -1)
 (add-hook 'clojure-mode-hook (lambda () (auto-fill-mode -1)))
+(add-hook 'python-mode (lambda () (auto-fill-mode -1)))
 (add-hook 'clojure-mode-hook (lambda () (eldoc-mode 1)))
 (add-hook 'cider-mode-hook (lambda () (eldoc-mode 1)))
 (add-hook 'cider-repl-mode-hook (lambda () (eldoc-mode 1)))
@@ -111,6 +112,7 @@
 (add-hook 'prog-mode-hook (lambda () (eldoc-mode 1)))
 (eldoc-mode 1)
 (auto-fill-mode -1)
+(add-hook 'shell-mode-hook (lambda () (auto-fill-mode -1)))
 
 ;;; color theme
 
@@ -128,11 +130,18 @@
 
 ;;; set keybindings
 
-(global-set-key "\t" 'company-complete-common)
 (global-set-key (kbd "<RET>") 'newline-and-indent)
 (global-set-key (kbd "C-]") 'goto-match-paren) ; this is actually C-5
 (global-set-key (kbd "M-<up>") 'paredit-splice-sexp-killing-backward)
 (global-set-key (kbd "C-x |") 'toggle-window-split)
+
+(add-hook 'company-mode-hook (lambda () (local-set-key (kbd "\t")
+                                                       'indent-for-tab-command)))
+(add-hook 'yas-minor-mode-hook (lambda () (local-set-key (kbd "\t")
+                                                         'indent-for-tab-command)))
+(global-set-key (kbd "\t") 'indent-for-tab-command)
+(add-hook 'yas-global-mode-hook (lambda () (local-set-key (kbd "\t")
+                                                          'indent-for-tab-command)))
 
 ;;; copy text from *nrepl-server* to *cider-repl*
 (add-hook 'cider-connected-hook
@@ -157,6 +166,9 @@
 (global-set-key (kbd "C-x ,") 'neotree-toggle)
 (set 'neo-window-width 50)
 
+;;; i give up organizing this silly thing
+(global-set-key (kbd "C-c C-a") 'cider-visit-error-buffer)
+
 ;; paredit, wrap in square brackets or braces
 ;;(global-set-key (kbd "M-[") 'paredit-wrap-square)
 ;;(global-set-key (kbd "M-{") 'paredit-wrap-curly)
@@ -164,3 +176,29 @@
 ;;(global-company-mode -1)
 
 ;;(add-hook 'cider-repl-mode-hook (lambda () (eldoc-mode -1)))
+
+;; C/P from http://stackoverflow.com/questions/683425/globally-override-key-binding-in-emacs
+(defvar my-keys-minor-mode-map
+  (let ((map (make-sparse-keymap)))
+    (define-key map (kbd "\t") 'indent-for-tab-command)
+    (define-key map (kbd "C-c C-a" 'cider-visit-error-buffer))
+    map)
+  "my-keys-minor-mode keymap.")
+
+(define-minor-mode my-keys-minor-mode
+  "A minor mode so that my key settings override annoying major modes."
+  :init-value t
+  :lighter " my-keys")
+
+(my-keys-minor-mode 1)
+
+(add-hook 'after-load-functions 'my-keys-have-priority)
+
+(defun my-keys-have-priority (_file)
+  "Try to ensure that my keybindings retain priority over other minor modes.
+
+Called via the `after-load-functions' special hook."
+  (unless (eq (caar minor-mode-map-alist) 'my-keys-minor-mode)
+    (let ((mykeys (assq 'my-keys-minor-mode minor-mode-map-alist)))
+      (assq-delete-all 'my-keys-minor-mode minor-mode-map-alist)
+      (add-to-list 'minor-mode-map-alist mykeys))))
