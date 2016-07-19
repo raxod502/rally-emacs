@@ -1,3 +1,8 @@
+;;; IMPORTANT NOTICE
+;;; you have to do package-install on the following:
+;;; aggressive-indent
+;;; neotree
+
 ;;; fix weird problems with rally-emacs
 
 ;; Ignore the warning about the `.emacs.d' directory being in
