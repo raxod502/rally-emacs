@@ -134,6 +134,7 @@
 (global-set-key (kbd "C-]") 'goto-match-paren) ; this is actually C-5
 (global-set-key (kbd "M-<up>") 'paredit-splice-sexp-killing-backward)
 (global-set-key (kbd "C-x |") 'toggle-window-split)
+(global-set-key (kbd "C-c F") 'projectile-find-file-in-known-projects)
 
 (add-hook 'company-mode-hook (lambda () (local-set-key (kbd "\t")
                                                        'indent-for-tab-command)))
@@ -181,7 +182,7 @@
 (defvar my-keys-minor-mode-map
   (let ((map (make-sparse-keymap)))
     (define-key map (kbd "\t") 'indent-for-tab-command)
-    (define-key map (kbd "C-c C-a" 'cider-visit-error-buffer))
+    (define-key map (kbd "C-c C-a") 'cider-visit-error-buffer)
     map)
   "my-keys-minor-mode keymap.")
 
