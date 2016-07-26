@@ -16,7 +16,7 @@
 ;; These help direct which packages will/will not be loaded from which archive.
 (setq package-archive-enable-alist '(("org" org org-plus-contrib)))
 (setq package-archive-exclude-alist '(("gnu" melpa org)))
-(package-refresh-contents)
+;; (package-refresh-contents) WHY?!?!?!?!?
 
 ;;; Clone (or symlink) repos into ~/.emacs.d/checkouts to use the bleeding edge
 ;;; version. Useful for things like nrepl that move fast.
