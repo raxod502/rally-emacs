@@ -1,6 +1,6 @@
 # DEPRECATED
 
-While [`rally-emacs`](https://github.com/RallySoftware/rally-emacs) is not deprecated, this fork is. I now use [`raxod502/dotfiles`](https://github.com/raxod502/dotfiles) instead.
+While [`rally-emacs`](https://github.com/RallySoftware/rally-emacs) is not deprecated, this fork is. I now use [`raxod502/radian`](https://github.com/raxod502/radian) instead.
 
 ## What is this repository?
 This repository contains a fully functional Clojure setup of the Emacs editor. rally-emacs contains many hours of setup and discovery
