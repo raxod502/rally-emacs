@@ -1,6 +1,0 @@
-# -*- mode: snippet; require-final-newline: nil -*-
-# name: warn
-# key: warn
-# binding: direct-keybinding
-# --
-(log/warn {:message "$1"$0})

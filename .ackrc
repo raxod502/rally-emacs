@@ -1,7 +1,0 @@
---type-add=css=.less,.sass,.scss
---type-add=clojure=.cljs
---type-add=html=.mustache
---ignore-dir=node_modules
---ignore-dir=bower_components
---ignore-dir=logs
---ignore-dir=target
