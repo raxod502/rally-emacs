@@ -1,4 +1,4 @@
-# DEPRECATED
+# DEPRECATED: `rally-emacs`
 
 This repository formerly contained my fork
 of [`rally-emacs`][rally-emacs], an Emacs configuration. It is now
